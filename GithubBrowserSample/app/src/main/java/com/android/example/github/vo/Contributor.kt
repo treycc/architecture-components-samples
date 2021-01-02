@@ -16,6 +16,7 @@
 
 package com.android.example.github.vo
 
+import androidx.annotation.NonNull
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import com.google.gson.annotations.SerializedName
@@ -32,6 +33,7 @@ import com.google.gson.annotations.SerializedName
 )
 data class Contributor(
     @field:SerializedName("login")
+    @field:NonNull
     val login: String,
     @field:SerializedName("contributions")
     val contributions: Int,
@@ -40,7 +42,9 @@ data class Contributor(
 ) {
 
     // does not show up in the response but set in post processing.
+    @field:NonNull
     lateinit var repoName: String
     // does not show up in the response but set in post processing.
+    @field:NonNull
     lateinit var repoOwner: String
 }
